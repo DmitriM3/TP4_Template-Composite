@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 import modelo.Director;
-import modelo.Empleado;
 import modelo.EmpleadoJefe;
 import modelo.Gerente;
 import modelo.LiderDeProyecto;
@@ -15,12 +14,10 @@ class EmpleadosTest {
 
 	@Test
 	void calcularMontoTotalSalarial() {
-		// SETUP
-		Empleado regular1 = new Regular(500);
-		Empleado regular2 = new Regular(500);
+
 		EmpleadoJefe liderProyecto = new LiderDeProyecto(1000);
-		liderProyecto.agregarEmpleado(regular1);
-		liderProyecto.agregarEmpleado(regular2);
+		liderProyecto.agregarEmpleado(new Regular(500));
+		liderProyecto.agregarEmpleado(new Regular(500));
 		EmpleadoJefe mandoMedio = new MandoMedio(1500);
 		mandoMedio.agregarEmpleado(liderProyecto);
 		EmpleadoJefe gerente = new Gerente(2000);
